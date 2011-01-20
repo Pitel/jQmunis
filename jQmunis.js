@@ -31,7 +31,7 @@ $(function() {
 		//console.log(otazek);	//Pocet otazek
 		
 		//console.log($("PROCHAZEJICI", xml).length);	//Pocet pruchodu (vcetne prazdnych!)
-		$("PROCHAZEJICI:not([UCO])", xml).each(function() {
+		$("PROCHAZEJICI", xml).each(function() {
 			var row = $("<tr/>");
 			for (var i = 1; i <= otazek; i++) {
 				//console.log(i, $("AKCE:last ODP[POR='" + i + "']", this));
