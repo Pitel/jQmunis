@@ -30,7 +30,7 @@ $(function() {
 		otazek = otazek.sort(function(a, b) {return b - a})[0];
 		//console.log(otazek);	//Pocet otazek
 		
-		//console.log($("PROCHAZEJICI:not([UCO])", xml).length);	//Pocet pruchodu (vcetne prazdnych!)
+		//console.log($("PROCHAZEJICI", xml).length);	//Pocet pruchodu (vcetne prazdnych!)
 		$("PROCHAZEJICI:not([UCO])", xml).each(function() {
 			var row = $("<tr/>");
 			for (var i = 1; i <= otazek; i++) {
