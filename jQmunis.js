@@ -1,7 +1,6 @@
 (function($) {
 	$.fn.munis = function(data, otazky, odpovedi) {
 		if (!this.is("table")) {
-			console.log("Neni tabulka");
 			return this;
 		}
 		
@@ -19,7 +18,7 @@
 		$.get(data, function(xml) {
 			//console.log(xml);
 			//console.log($("VERZE", xml).text());
-		
+			
 			var otazek = [];
 			$("ODP", xml).each(function() {
 				otazek.push(parseInt($(this).attr("POR")));
@@ -27,7 +26,7 @@
 			//console.log(otazek);	//Jeste pole
 			otazek = otazek.sort(function(a, b) {return b - a})[0];
 			//console.log(otazek);	//Pocet otazek
-		
+			
 			//console.log($("PROCHAZEJICI", xml).length);	//Pocet pruchodu (vcetne prazdnych!)
 			$("PROCHAZEJICI", xml).each(function() {
 				var row = $("<tr/>");
