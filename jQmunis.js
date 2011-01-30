@@ -3,6 +3,7 @@
 		if (!this.is("table")) {
 			return this;
 		}
+		this.empty();
 		
 		//Hlavicka (otazky)
 		var table = this;
