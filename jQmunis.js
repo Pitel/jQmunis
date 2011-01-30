@@ -1,6 +1,9 @@
 (function($) {
 	$.fn.munis = function(data, otazky, odpovedi) {
-		//TODO Kontrola ze mame tabulku
+		if (!this.is("table")) {
+			console.log("Neni tabulka");
+			return this;
+		}
 		
 		//Hlavicka (otazky)
 		var table = this;
