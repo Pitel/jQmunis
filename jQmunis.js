@@ -1,5 +1,7 @@
 (function($) {
 	$.fn.munis = function() {
+		//TODO Kontrola ze mame tabulku
+		
 		//Hlavicka (otazky)
 		var row = $("<tr/>");
 		$.each(otazky, function(index, value) {
@@ -7,8 +9,8 @@
 			cell.text(value);
 			cell.appendTo(row);
 		});
-		$("table").append(row);
-	
+		this.append(row);
+		
 		// Odpovedi
 		$.get("data.xml", function(xml) {
 			//console.log(xml);
@@ -41,7 +43,7 @@
 					cell.appendTo(row);
 				}
 				if (row.text()) {	//Vyhodime prazdne odpovedi
-					$("table").append(row);
+					this.append(row);
 				}
 			});
 		}, "xml");	//Format
