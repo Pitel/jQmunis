@@ -3,13 +3,14 @@
 		//TODO Kontrola ze mame tabulku
 		
 		//Hlavicka (otazky)
+		var table = this;
 		var row = $("<tr/>");
 		$.each(otazky, function(index, value) {
 			var cell = $("<th/>");
 			cell.text(value);
 			cell.appendTo(row);
 		});
-		this.append(row);
+		table.append(row);
 		
 		// Odpovedi
 		$.get("data.xml", function(xml) {
@@ -43,9 +44,10 @@
 					cell.appendTo(row);
 				}
 				if (row.text()) {	//Vyhodime prazdne odpovedi
-					this.append(row);
+					table.append(row);
 				}
 			});
 		}, "xml");	//Format
+		return this;
 	};
 })(jQuery);
