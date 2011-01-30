@@ -1,5 +1,5 @@
 (function($) {
-	$.fn.munis = function() {
+	$.fn.munis = function(data, otazky, odpovedi) {
 		//TODO Kontrola ze mame tabulku
 		
 		//Hlavicka (otazky)
@@ -13,7 +13,7 @@
 		table.append(row);
 		
 		// Odpovedi
-		$.get("data.xml", function(xml) {
+		$.get(data, function(xml) {
 			//console.log(xml);
 			//console.log($("VERZE", xml).text());
 		
